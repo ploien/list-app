@@ -1,0 +1,4 @@
+Improve UI/Aesthetics of page.
+Password verification.
+Password recovery.
+Account deletion. 

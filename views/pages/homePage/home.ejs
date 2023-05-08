@@ -1,0 +1,41 @@
+<%- include('../../partials/head.ejs') %>
+    <link rel='stylesheet' href='/stylesheets/home.css'>
+    <link rel='stylesheet' href='/stylesheets/shared.css'>
+</head>
+<body>
+<%- include("../../partials/navigation.ejs") %>
+    <main>
+        <section class="box">
+            <h2 class="section-title">To Do Lists</h2>
+            <!--Create a list of user lists, displayed as tiles-->
+            <ul class="lists">
+                <% lists.forEach(list => { %>
+                    <li class="lists-row">
+                            <a class="list-link" href="/list/<%= list.id %>"><%= list.title %></a>
+                            <form class="delete-list__form" action="./deleteList" method="post">
+
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <input type="hidden" id="listId" name="listId" value="<%= list.id %>">
+                                <button class="delete-list__button button" type="submit">Remove</button>
+                                
+                            </form>
+                    </li>
+                <% }) %>
+            </ul>
+
+        <!--TODO Add a button to create a new list-->
+
+            <form action="/list" method="post">
+
+                <h2 class="section-title">Create New List</h2>
+
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="text" class="text-input" placeholder="List Name" id="listTitle" name="listTitle">
+                <button type="submit" class="button">Create List</button>
+
+            </form>
+        </section>
+    </main>
+</body>
+<script src="/scripts/shared.js" defer></script>
+</html>

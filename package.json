@@ -1,0 +1,33 @@
+{
+  "name": "to_do_app",
+  "version": "1.0.0",
+  "description": "To Do List Web App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Peter Oien",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-session-sequelize": "^7.1.4",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.12.1",
+    "foo": "^1.0.0",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.7",
+    "mysql2": "^2.3.0",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.19",
+    "sequelize": "^6.6.5"
+  },
+  "overrides": {}
+}

@@ -1,0 +1,34 @@
+:root {
+    --dark-background: #17173a;
+    --light-background: rgb(124, 138, 165);
+    --nav-hightlight: rgb(175, 215, 255);
+    --active-link: rgb(38, 21, 226);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.lists {
+    padding: 0;
+}
+
+.lists-row {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: .5rem 0;
+}
+
+.lists-row a {
+    text-decoration: none;
+    margin-right: 2rem;
+    color: white;
+}
+
+.lists-row a:hover {
+    color: rgb(15, 202, 46);
+}

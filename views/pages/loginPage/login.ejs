@@ -1,0 +1,23 @@
+<%- include('../../partials/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include("../../partials/navigation.ejs") %>
+
+    <main>
+        <% if ( errorMessage) { %>
+            <div class='errorMessage'><%= errorMessage %></div>
+        <% } %>
+        <form class="login-form box" action="/login" method="post" name="login" id="login">
+
+                <input class="email text-input" type="email" name="email" id="email" placeholder="Email" autocomplete="off">
+                <input class="password text-input" type="text" name="password" id="password" placeholder="Password">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+            <button class="login-form__submit-button button" type="submit">Log In</button>
+        </form>
+    </main>
+</body>
+<script src="/scripts/shared.js" defer></script>
+</html>

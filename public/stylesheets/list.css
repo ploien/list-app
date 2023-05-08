@@ -1,0 +1,35 @@
+.add_task {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    margin: 10px 10px 10px 4px;
+}
+
+.task-row {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.task-body {
+    width: 20rem;
+    min-width: 8rem;
+}
+
+.list-section {
+    margin: 0;
+}
+
+.list-title {
+    margin: 0;
+    text-align: center;
+    color: white;
+    background-color: darkgreen;
+    padding: 1rem;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}

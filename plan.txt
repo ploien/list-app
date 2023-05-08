@@ -1,0 +1,83 @@
+Current to-do list:
+Add User object to project (Create, Integrate into lists; i.e. base lists on specific users)
+
+Website Description/Goals/ MVP Requirements
+Description: 
+A user can create an account to create and save different lists. The home page will contain
+a list of lists as well as the option to create a new list, or delete an existing list.
+Clicking on a given list will send the user to a page that contains all the items on list.
+
+On the list page the user can add items/tasks, delete an item, or mark an item as complete.
+
+Features:
+-   User can create a list of items
+-   User can delete a list of items
+-   Items can be added to the list
+-   Items can be deleted from the list
+-   Items can be marked as complete.
+-   The user can create and account where the lists will be stored
+-   The user can change their password
+
+Pages:
+    Login Page
+        email - Input                       
+        Password - Input
+        Login - button      
+        Forgot password - link
+
+        Backend:
+            Post-Login: Check for existing user
+                User exists - Set session cookie for user and redirect to Home Page
+                User !exist - Redirect to login page with error message stating that the user doesn't exist
+
+    Sign Up page
+        User email - input
+        Password - input
+        Confirm Password - input
+        Signup - button
+
+        Backend: 
+            Post-Signup: 
+                Check for existing user under given email:
+                    If email exists - redirect to signup page with error saying 
+                    user with email already exists
+
+                    If emal !exist - create new account for user and redirect to home page
+
+    Home page (After login)
+        List of existing lists (Drop down menu)
+            List entry: List title, delete button
+        Create New list (button)
+            
+    List View
+        Title Field (Editable)
+        List of items(tasks)
+            Task details, complete/Incomplete(checkbox)-lines checked complete w/h strikethrough effect, delete button
+
+
+
+
+Models/Objects:
+User
+    user_id
+    password
+
+List
+    List_id
+    User_id
+    List name
+    Date created
+
+Item/Task
+    item_id
+    list_id
+    Description: Text
+    Complete/Incomplete: Boolean
+    Date Created: Date
+    Date Complete: Date
+
+Relations:
+User - has many - lists
+list - has one - user
+list - has many - items
+item - has one - list

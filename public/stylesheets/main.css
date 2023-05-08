@@ -1,0 +1,18 @@
+.list_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}
+
+.list_row > * {
+    margin: auto;
+    flex-basis: 33%;
+    word-wrap: break-word;
+    display: inline;
+    margin: 5px auto 5px auto;
+}
+

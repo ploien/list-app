@@ -1,0 +1,57 @@
+
+<header>
+    <div id="backdrop" class="backdrop"></div>
+    <nav id="nav-bar" class="nav-bar">
+        <ul class="nav-bar-links">
+            <li class=nav-bar-link__container <%= path === '/' ? 'active' : '' %>">
+                <a class="nav-bar-link" href="/">
+                    <img class="home-image" src="/images/OIP.jpg" alt="Home">
+                </a>
+            </li>
+            <li class="nav-bar-link__container <%= path === '/signup' ? 'active' : '' %>">
+                <a class="nav-bar-link" href="/signup">Sign-up</a>
+            </li>
+            <% if(!isAuthenticated) { %>
+                <li class="nav-bar-link__container <%= path === '/login' ? 'active' : '' %>">
+                    <a class="nav-bar-link" href="/login"><p>Login</p></a>
+                </li>
+            <% } else { %>
+                <li class="nav-bar-link__container">
+                    <form  class="nav-bar-link logout" action="/logout" method="post">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button class="button logout__button" type="submit"><p>Logout</p></button>
+                    </form>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+    <button id="toggle-button" class="toggle-button">
+        <span class="toggle-button__bar"></span>
+        <span class="toggle-button__bar"></span>
+        <span class="toggle-button__bar"></span>
+    </button>
+</header>
+<nav id="mobile-nav" class="mobile-nav box">
+    <ul class="mobile-nav-links">
+        <li class="mobile-nav-link__container <%= path === '/' ? 'active' : '' %>">
+            <a class="mobile-nav-link" href="/">
+                <img class="home-image" src="/images/OIP.jpg" alt="Home">
+            </a>
+        </li>
+        <li class="mobile-nav-link__container <%= path === '/signup' ? 'active' : '' %>">
+            <a class="mobile-nav-link" href="/signup">Sign-up</a>
+        </li>
+        <% if(!isAuthenticated) { %>
+            <li class="mobile-nav-link__container <%= path === '/login' ? 'active' : '' %>">
+                <a class="mobile-nav-link" href="/login"><p>Login</p></a>
+            </li>
+        <% } else { %>
+            <li class="mobile-nav-link__container">
+                <form  class="mobile-nav-link" action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="button" type="submit"><p>Logout</p></button>
+                </form>
+            </li>
+        <% } %>
+    </ul>
+</nav>

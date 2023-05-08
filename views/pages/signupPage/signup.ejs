@@ -1,0 +1,21 @@
+    <%- include('../../partials/head.ejs') %>
+
+    </head>
+    <body>
+        <%- include("../../partials/navigation.ejs") %>
+
+        <main>
+            <% if ( errorMessage) { %>
+                <div class='errorMessage'><%= errorMessage %></div>
+            <% } %>
+            <form class="signup-form box" action="/signup" method="post" name="signup" id="signup" autocomplete="off">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input placeholder="Email" class="email text-input" type="email" name="email" id="email" value="">
+                <input placeholder="Password" class="password text-input" type="password" name="password" id="password" autocomplete="new-password">
+                <input placeholder="Confirm Password" class="confirm-password text-input" type="password" name="confirmPassword" id="confirmPassword">
+                <button class="signup-form__submit-button button" type="submit">Sign Up</button>
+            </form>
+        </main>
+    </body>
+    <script src="/scripts/shared.js" defer></script>
+</html>
